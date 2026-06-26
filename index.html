@@ -3,18 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binary Forge</title>
+    <title>Binary Forge — AI Tools for Game Development</title>
     <style>
-        body { font-family: -apple-system, sans-serif; max-width: 700px; margin: 80px auto; padding: 20px; color: #333; background: #fff; }
-        h1 { font-size: 2em; margin-bottom: 0.2em; }
-        .tagline { color: #777; font-size: 0.95em; margin-bottom: 2em; }
-        p { font-size: 1.1em; line-height: 1.7; color: #444; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0a0a0f;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .grid-bg {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 70%);
+        }
+        .glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.12;
+            pointer-events: none;
+        }
+        .glow-1 { background: #7c3aed; top: -200px; left: -100px; animation: float 8s ease-in-out infinite; }
+        .glow-2 { background: #06b6d4; bottom: -200px; right: -100px; animation: float 10s ease-in-out infinite reverse; }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+        main {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 40px 30px;
+            max-width: 650px;
+        }
+        .logo {
+            font-size: 3.2em;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #c084fc 0%, #7c3aed 40%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-size: 1.15em;
+            color: #94a3b8;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #7c3aed, #06b6d4);
+            margin: 0 auto 35px;
+            border-radius: 1px;
+        }
+        .description {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #a5b4c4;
+            margin-bottom: 45px;
+        }
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 50px;
+            padding: 10px 22px;
+            font-size: 0.9em;
+            color: #94a3b8;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #06b6d4;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; box-shadow: 0 0 0 0 rgba(6,182,212,0.4); }
+            50% { opacity: 1; box-shadow: 0 0 0 8px rgba(6,182,212,0); }
+        }
+        .contact {
+            margin-top: 50px;
+            font-size: 0.85em;
+            color: #64748b;
+        }
+        .contact a { color: #94a3b8; text-decoration: none; }
+        .contact a:hover { color: #c084fc; }
     </style>
 </head>
 <body>
-    <h1>Binary Forge</h1>
-    <p class="tagline">AI tools for game development</p>
-    <p>We build intelligent development tools for game studios — automated code generation for game engines, multi-agent NPC behavior systems, and AI-powered QA testing pipelines. Powered by Vertex AI.</p>
-    <p>Contact: hello@binaryforge.dev</p>
+    <div class="grid-bg"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <main>
+        <h1 class="logo">Binary Forge</h1>
+        <p class="tagline">AI Tools for Game Development</p>
+        <div class="divider"></div>
+        <p class="description">
+            Intelligent development tools for game studios —<br>
+            automated code generation for game engines,<br>
+            multi-agent NPC behavior systems,<br>
+            and AI-powered QA testing pipelines.
+        </p>
+        <div class="status">
+            <span class="status-dot"></span>
+            Platform in active development
+        </div>
+        <p class="contact">
+            <a href="mailto:hello@binaryforge.dev">hello@binaryforge.dev</a>
+        </p>
+    </main>
 </body>
 </html>
